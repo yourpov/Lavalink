@@ -4,7 +4,7 @@ WORKDIR /opt/Lavalink
 
 RUN apt-get update && \
     apt-get install -y wget && \
-    wget -O Lavalink.jar https://github.com/lavalink-devs/Lavalink/releases/download/4.0.8/Lavalink.jar && \
+    wget -O Lavalink.jar https://github.com/lavalink-devs/Lavalink/releases/download/3.7.12/Lavalink.jar && \
     ls -lh Lavalink.jar && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
