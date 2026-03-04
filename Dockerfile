@@ -11,7 +11,4 @@ RUN apt-get update && \
 
 COPY application.yml application.yml
 
-HEALTHCHECK --interval=30s --timeout=10s --start-period=30s --retries=3 \
-  CMD wget --spider -q http://localhost:${PORT:-2333} || exit 1
-
 CMD ["java", "-Djdk.tls.client.protocols=TLSv1.2", "-Xmx256M", "-jar", "Lavalink.jar"]
