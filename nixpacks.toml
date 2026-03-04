@@ -1,0 +1,14 @@
+[phases.setup]
+nixPkgs = ["jdk17"]
+
+[phases.install]
+cmds = ["./gradlew --version"]
+
+[phases.build]
+cmds = ["./gradlew clean build -x check -x test"]
+
+[start]
+cmd = "java -Djdk.tls.client.protocols=TLSv1.2 -Xmx256M -jar Lavalink.jar"
+
+[variables]
+JAVA_HOME = "/nix/store/*-openjdk-17*/lib/openjdk"
